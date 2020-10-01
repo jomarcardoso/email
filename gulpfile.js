@@ -2,6 +2,28 @@ const gulp = require('gulp');
 const gulpSass = require('gulp-sass');
 const gulpInlineCss = require('gulp-inline-css');
 const fs = require('fs');
+const gulpVTL = require('gulp-velocityjs2');
+const del = require('del');
+
+const config = {
+  paths: {
+    vm:  {
+      src: './src/vm/common/**/*.vm',
+      dest: './src/temp/vm'
+    },
+    vmInlineCss: {
+      dest: './dist'
+    }
+  }
+}
+
+const delBuildTask = () => del(['./dist', './src/temp']);
+
+function htmlTask () {
+  return gulp.src(`${config.paths.vm.dest}/**/*.vm`)
+    .pipe( gulpVTL() )
+    .pipe(gulp.dest(config.paths.vmInlineCss.dest));
+}
 
 function sassTask() {
   return gulp.src('./src/scss/**/*.scss')
@@ -11,9 +33,9 @@ function sassTask() {
 }
 
 function inlineCssTask({
-  src = './src/vm/**/*.vm',
+  src = config.paths.vm.src,
   extraCss = '',
-  dist = './src/temp/vm',
+  dist = config.paths.vm.dest,
 } = {}) {
   const files = gulp.src(src);
 
@@ -35,10 +57,11 @@ function getCssContentBySrc(src = '') {
 }
 
 function generateInlineCssTaskByThemeName(themeName = '') {
-  return  () => inlineCssTask({
+  return themeInlineCssTask = () => inlineCssTask({
     extraCss: getCssContentBySrc(`./src/temp/css/themes/${themeName}.css`),
-    dist: `./src/temp/vm/${themeName}`,
-  })
+    dist: `${config.paths.vm.dest}/${themeName}`,
+    src: [config.paths.vm.src, `./src/vm/themes/${themeName}/**/*.vm`],
+  });
 }
 
 function getInlineCssTasksByThemes() {
@@ -52,6 +75,6 @@ function getInlineCssTasksByThemes() {
 
 const inlineCSSTasks = getInlineCssTasksByThemes();
 
-const defaultTask = gulp.series(sassTask, ...inlineCSSTasks);
+const defaultTask = gulp.series(delBuildTask, sassTask, gulp.parallel(...inlineCSSTasks), htmlTask);
 
 exports.default = defaultTask;

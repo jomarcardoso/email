@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "devDependencies": {
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-inline-css": "^3.5.0",
-    "gulp-sass": "^4.1.0"
+    "gulp-sass": "^4.1.0",
+    "gulp-velocityjs2": "^0.1.0"
   },
   "scripts": {
     "start": "gulp"

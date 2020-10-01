@@ -7,12 +7,13 @@ O CSS dos clientes de email são limitados. Como referência usamos o site [http
 Algumas limitações;
 
 - layout com tabelas;
+- css em linha;
 
 
 A forma adotada é:
 
-- ter uma tag style no header e no body do documento com o mesmo CSS
 - usar Sass
+- pegar as classes e injetar o css delas nos elementos
 
 Adicionais
 
