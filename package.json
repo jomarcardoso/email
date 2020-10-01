@@ -1,0 +1,23 @@
+{
+  "name": "emails-boilerplate-velocity",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-inline-css": "^3.5.0",
+    "gulp-sass": "^4.1.0"
+  },
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jomarcardoso/emails-boilerplate-velocity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jomarcardoso/emails-boilerplate-velocity/issues"
+  },
+  "homepage": "https://github.com/jomarcardoso/emails-boilerplate-velocity#readme"
+}
