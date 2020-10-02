@@ -1,3 +1,8 @@
+## removeIf(production)
+#set($ctx.logoImage = 'asdfasdfasdf')
+## endRemoveIf(production)
+
 <div class="grid">
   <button class="button">botão</button>
 </div>
+<img src="${ctx.logoImage}" />

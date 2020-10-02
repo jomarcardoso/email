@@ -4,15 +4,20 @@ const gulpInlineCss = require('gulp-inline-css');
 const fs = require('fs');
 const gulpVTL = require('gulp-velocityjs2');
 const del = require('del');
+const gulpRemoveCode = require('gulp-remove-code');
 
 const config = {
   paths: {
     vm:  {
       src: './src/vm/common/**/*.vm',
-      dest: './src/temp/vm'
+      temp: './src/temp/vm',
+      dest: './dist/vm'
     },
     vmInlineCss: {
       dest: './dist'
+    },
+    html: {
+      dest: './dist/html'
     }
   }
 }
@@ -20,9 +25,18 @@ const config = {
 const delBuildTask = () => del(['./dist', './src/temp']);
 
 function htmlTask () {
-  return gulp.src(`${config.paths.vm.dest}/**/*.vm`)
-    .pipe( gulpVTL() )
-    .pipe(gulp.dest(config.paths.vmInlineCss.dest));
+  return gulp.src(`${config.paths.vm.temp}/**/*.vm`)
+    .pipe(gulpVTL())
+    .pipe(gulp.dest(config.paths.html.dest));
+}
+
+function vmTask() {
+  return gulp.src(`${config.paths.vm.temp}/**/*.vm`)
+    .pipe(gulpRemoveCode({
+      commentStart: '##',
+      production: true,
+    }))
+    .pipe(gulp.dest(config.paths.vm.dest));
 }
 
 function sassTask() {
@@ -35,7 +49,7 @@ function sassTask() {
 function inlineCssTask({
   src = config.paths.vm.src,
   extraCss = '',
-  dist = config.paths.vm.dest,
+  dist = config.paths.vm.temp,
 } = {}) {
   const files = gulp.src(src);
 
@@ -59,7 +73,7 @@ function getCssContentBySrc(src = '') {
 function generateInlineCssTaskByThemeName(themeName = '') {
   return themeInlineCssTask = () => inlineCssTask({
     extraCss: getCssContentBySrc(`./src/temp/css/themes/${themeName}.css`),
-    dist: `${config.paths.vm.dest}/${themeName}`,
+    dist: `${config.paths.vm.temp}/${themeName}`,
     src: [config.paths.vm.src, `./src/vm/themes/${themeName}/**/*.vm`],
   });
 }
@@ -75,6 +89,6 @@ function getInlineCssTasksByThemes() {
 
 const inlineCSSTasks = getInlineCssTasksByThemes();
 
-const defaultTask = gulp.series(delBuildTask, sassTask, gulp.parallel(...inlineCSSTasks), htmlTask);
+const defaultTask = gulp.series(delBuildTask, sassTask, gulp.parallel(...inlineCSSTasks), htmlTask, vmTask);
 
 exports.default = defaultTask;
