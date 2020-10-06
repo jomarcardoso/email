@@ -37,7 +37,11 @@ const delBuildTask = () => del(['./dist', './src/temp']);
 function htmlTask() {
   return gulp
     .src(`${config.paths.vm.temp}/**/*.vm`)
-    .pipe(gulpVTL())
+    .pipe(
+      gulpVTL(undefined, {
+        escape: false,
+      })
+    )
     .pipe(gulp.dest(config.paths.html.dest));
 }
 
@@ -71,6 +75,9 @@ function inlineCssTask({
     .pipe(
       gulpInlineCss({
         removeHtmlSelectors: true,
+        // applyTableAttributes: true,
+        removeStyleTags: false,
+        // applyWidthAttributes: true,
         extraCss,
       })
     )
@@ -132,7 +139,7 @@ function getConcatTasksByThmes() {
 const inlineCSSTasks = getInlineCssTasksByThemes();
 const concatTasks = getConcatTasksByThmes();
 
-const defaultTask = gulp.series(
+const buildTask = gulp.series(
   delBuildTask,
   sassTask,
   gulp.parallel(...inlineCSSTasks),
@@ -141,4 +148,8 @@ const defaultTask = gulp.series(
   vmTask
 );
 
-exports.default = defaultTask;
+function watchTask() {
+  return gulp.watch(['./src/**/*', '!./src/temp/**/*'], buildTask);
+}
+
+exports.default = gulp.series(buildTask, watchTask);

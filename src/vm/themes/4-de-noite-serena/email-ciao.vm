@@ -2,9 +2,11 @@
 
 ## endRemoveIf(production)
 
-<div class="grid">
-  <img src="${ctx.logoImage.url}" alt="Birman" width="196" height="49" border="0"  title="" />
-  <button class="button">botão</button>
-  #d()
-</div>
-<img src="${ctx.logoImage.url}" />
+
+#@commonHtmlBase()
+  <div class="grid">
+    <img src="${ctx.logoImage.url}" alt="Birman" width="196" height="49" border="0"  title="" />
+    <button class="button">botão</button>
+  </div>
+  <img src="${ctx.logoImage.url}" />
+#end

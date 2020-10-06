@@ -1,0 +1,5 @@
+## removeIf(production)
+#set($ctx = {})
+#set($ctx.logoImage = {})
+#set($ctx.logoImage.url = 'um imagem')
+## endRemoveIf(production)

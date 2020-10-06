@@ -2,6 +2,10 @@
 @import './utils/variables';
 @import './utils/theme';
 
+// common
+@import './common/resets';
+
 // components
-@import './components/button';
 @import './components/grid';
+@import './components/img';
+@import './components/text';

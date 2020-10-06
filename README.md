@@ -9,7 +9,6 @@ Algumas limitações;
 - layout com tabelas;
 - css em linha;
 
-
 A forma adotada é:
 
 - usar Sass
@@ -23,8 +22,19 @@ Ao lado de um `#parse` colocar em comentário a variável sendo importada.
 
 Comentário nas primeiras linhas descrevendo o email.
 
-Adicionais
+Para adicionar telefones `<a href="tel:1-800-555-5555">1-808-555-5555</a>`
 
+## Regras
+
+- CSS Inline (feito pela ferramenta)
+- `<table>` para layout
+- `<div>` não funciona padding e max-width
+
+## Material adicional
+
+- [MUICSS - HTML Email](https://www.muicss.com/docs/v1/email/boilerplate-html)
 - fake smtp
-- extensões do vs code
-  -
+- https://templates.mailchimp.com/
+- https://emailframe.work/
+
+- ## extensões do vs code
