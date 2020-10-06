@@ -101,11 +101,14 @@ function getInlineCssTasksByThemes() {
   return tasks;
 }
 
-function concatTask({ folder = '', commonFile = '' } = {}) {
-  return gulp
-    .src(`${folder}/*.vm`)
-    .pipe(gulpHeader(fs.readFileSync(commonFile, 'utf8')))
-    .pipe(gulp.dest(folder));
+function concatTask({ folder = '', commonFiles = [] } = {}) {
+  const stream = gulp.src(`${folder}/*.vm`);
+
+  commonFiles.forEach((commonFile) =>
+    stream.pipe(gulpHeader(fs.readFileSync(commonFile, 'utf8')))
+  );
+
+  return stream.pipe(gulp.dest(folder));
 }
 
 function getConcatTasksByThmes() {
@@ -113,7 +116,11 @@ function getConcatTasksByThmes() {
     return (themeConcatTask = () =>
       concatTask({
         folder: `./src/temp/vm/${themeName}`,
-        commonFile: './src/temp/vm/1-quero-ver/macros/VM_global_library.vm',
+        commonFiles: [
+          './src/temp/vm/1-quero-ver/macros/VM_global_library.vm',
+          './src/temp/vm/1-quero-ver/mocks/VM_global_mocks.vm',
+          './src/temp/vm/1-quero-ver/variables/VM_global_variables.vm',
+        ],
       }));
   }
 

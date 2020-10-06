@@ -1,8 +1,3 @@
-#set($ctx = {})
-#set($ctx.logoImage = {})
-#set($ctx.logoImage.url = 'um imagem')
-
-
 #macro( d )
 <tr><td class="button"></td></tr>
 #end
