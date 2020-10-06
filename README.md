@@ -15,6 +15,14 @@ A forma adotada é:
 - usar Sass
 - pegar as classes e injetar o css delas nos elementos
 
+## Boas práticas
+
+Não importar mais de uma variável em um parse.
+
+Ao lado de um `#parse` colocar em comentário a variável sendo importada.
+
+Comentário nas primeiras linhas descrevendo o email.
+
 Adicionais
 
 - fake smtp

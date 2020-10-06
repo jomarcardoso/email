@@ -1,3 +1,193 @@
-<div class="grid">
-  <button class="button">botão</button>
-</div>
+#set ( $baseLinkUrl = '?utm_source=email_base_birman&utm_medium=email_transacional&utm_campaign=creditos_arezzo' )
+
+## removeIf(production)
+
+## endRemoveIf(production)
+
+#d()
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Alexandre Birman</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+			<tr>
+			<td valign="middle" colspan="3" height="90" align="center" style="line-height:15px;">
+				<img src="${ctx.logoImage.url}" alt="Birman" width="196" height="49" border="0"  title="" />
+			</td>
+			</tr>
+			<tr>
+				<td colspan="3" valign="middle" height="60" align="center" bgcolor="#e6d2c9" style="font-size: 12px; font-weight: normal; font-family: tahoma, sans-serif;">
+					Você recebeu créditos
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" height="40">
+
+				</td>
+			</tr>
+			<tr>
+				<td width="30"></td>
+				<td align="center" bgcolor="#fff">
+					<table>
+						<tr>
+							<td style="line-height: 100%;">
+								<font style="font-family: Tahoma, sans-serif; font-size:20px; font-weight:bold; font-weight: normal;">Olá, ${ctx.displayName}!</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td width="30"></td>
+			</tr>
+			<tr>
+				<td width="30"></td>
+				<td align="center" bgcolor="#fff">
+					<table>
+						<tr>
+							<td align="center">
+							        #if (${ctx.gift} == true)
+                                        <font style="font-family: tahoma, sans-serif; font-size:12px; line-height:20px;">
+                                            Informamos que seu crédito Alexandre Birman
+                                            <br/>
+                                            já está disponível em sua conta.
+                                        </font>
+                                    #else
+                                        <font style="font-family: tahoma, sans-serif; font-size:12px; line-height:20px;">
+                                            Informamos que seu crédito Alexandre Birman referente
+                                            <br/>
+                                            ao ressarcimento do seu pedido código ${ctx.orderNumber},
+                                            <br/>
+                                            realizado em ${ctx.dateOrder}, já está disponível em sua conta.
+                                        </font>
+                                    #end
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td width="30"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td height="20" bgcolor="#fff"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td width="30"></td>
+				<td align="center" bgcolor="#fff">
+					<table>
+						<tr>
+							<td align="center">
+								<font style="font-family: tahoma, sans-serif; font-size:12px; line-height:20px;">
+									No momento de finalizar sua compra, os créditos<br/> aparecerão como uma das formas de pagamento.<br />Você também poderá visualizar seu saldo em sua conta.
+								</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td width="30"></td>
+			</tr>
+			<tr>
+				<td width="30"></td>
+				<td height="20" bgcolor="#fff"></td>
+				<td width="30"></td>
+			</tr>
+			<tr>
+				<td width="30"></td>
+				<td align="center" bgcolor="#fff">
+					<table>
+						<tr>
+							<td align="center" width="250" height="50" bgcolor="#fff">
+								<a style="text-decoration:none; padding: 5px 20px;" href="${ctx.baseUrl}/my-account" target="_blank">
+									<font style="color:#000000; font-family: Tahoma, sans-serif; font-size:12px; border: 2px solid #000; padding: 10px;">EXPLORAR AS NOVIDADES</font>
+								</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td width="30"></td>
+			</tr>
+			<tr>
+				<td colspan="3" height="45"></td>
+			</tr>
+		</table>
+		<table width="600" height="260" colspan="3" border="0" align="center" cellpadding="0" cellspacing="0">
+			<tr>
+				<td align=center height="130">
+					<a href="${ctx.secureBaseUrl}/c/newin" target="_blank" >
+						<img src="${ctx.bannerImage.url}" alt="VER NOVIDADES" title="VER NOVIDADES" width="100%" height="auto" border="0" style="display:block">
+					</a>
+				</td>
+			</tr>
+		</table>
+		<table width="600" height="297" colspan="3" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#e6d2c9">
+		<tr>
+			<td align=center height="35">
+			</td>
+		</tr>
+		<tr>
+			<td align="center" colspan="3" height="20">
+				<font style="font-family:Tahoma; font-size:12px; line-height: 15px;">
+					<a style="color:#000;" href="${ctx.baseUrl}/atendimento" target="_blank">Fale Conosco</a>
+				</font>
+				</td>
+		</tr>
+		<tr>
+			<td align=center height="25">
+			</td>
+		</tr>
+		<tr>
+			<td  align="center" colspan="3" height="20">
+				<font style="font-family:Tahoma; font-size:12px; line-height:15px;">
+					<a style="color:#000;" href="${ctx.baseUrl}/my-account" target="_blank">Acesse sua Conta</a>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center height="30">
+			</td>
+		</tr>
+		<tr>
+			<td width="40"></td>
+			<td width="70" height="40" style="text-align: center;">
+				<a style="color:#000; text-decoration:none;margin-right:30px;" href="https://www.instagram.com/${ctx.instagramAccount}" target="_blank">
+					<img src="${ctx.instagramImage.url}" width="18" height="18" border="0" style="display:inline-block">
+				</a>
+				<a style="color:#000; text-decoration:none;margin-right:30px;" href="https://www.facebook.com/${ctx.facebookAccount}" target="_blank">
+					<img src="${ctx.facebookImage.url}" width="18" height="18" border="0" style="display:inline-block">
+				</a>
+				<a style="color:#000; text-decoration:none" href="https://vimeo.com/${ctx.vimeoAccount}" target="_blank">
+					<img src="${ctx.vimeoImage.url}" width="18" height="18" border="0" style="display:inline-block">
+				</a>
+			</td>
+			<td width="40">
+
+			</td>
+		</tr>
+		<tr>
+			<td align=center height="20">
+			</td>
+		</tr>
+		<tr>
+			<td valign="middle" colspan="3" align="center" style="line-height:15px;">
+			<img src="${ctx.logoImage.url}" width="120" height="28" alt="Birman" border="0"  title="" />
+		</td>
+		</tr>
+		<tr>
+			<td align=center height="20">
+			</td>
+		</tr>
+		<tr>
+			<td align="center" height="15" colspan="3" style="color:#afaaa8; font-size: 10px; line-height:0;"> ZZAB Comércio de Calçados Ltda  Rod Governador Mario Covas, 3255  Armz 01  Sala 210</td>
+		</tr>
+		<tr>
+			<td align="center" height="15" colspan="3" style="color:#afaaa8; font-size: 10px; line-height:0;"> Padre Mathias  Cariacica, ES  CEP 29157-100  CNPJ 07.900.208/0077-04  + 55 11 2388 8221</td>
+		</tr>
+		<tr>
+			<td align="center" height="15" colspan="3" style="color:#afaaa8; font-size: 10px; line-height:0;">© 2018 Alexandre Birman</td>
+		</tr>
+		<tr height="10"></tr>
+	</table>
+	</body>
+</html>

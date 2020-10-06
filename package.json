@@ -5,6 +5,7 @@
   "devDependencies": {
     "del": "^6.0.0",
     "gulp": "^4.0.2",
+    "gulp-header": "^2.0.9",
     "gulp-inline-css": "^3.5.0",
     "gulp-remove-code": "^3.0.4",
     "gulp-sass": "^4.1.0",

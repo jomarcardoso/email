@@ -1,8 +1,10 @@
 ## removeIf(production)
-#set($ctx.logoImage = 'asdfasdfasdf')
+
 ## endRemoveIf(production)
 
 <div class="grid">
+  <img src="${ctx.logoImage.url}" alt="Birman" width="196" height="49" border="0"  title="" />
   <button class="button">botão</button>
+  #d()
 </div>
-<img src="${ctx.logoImage}" />
+<img src="${ctx.logoImage.url}" />
