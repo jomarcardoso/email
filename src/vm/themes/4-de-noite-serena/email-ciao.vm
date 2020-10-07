@@ -3,7 +3,7 @@
 ## endRemoveIf(production)
 
 
-#@commonHtmlBase()
+#@htmlBase()
   <div class="grid">
     <img src="${ctx.logoImage.url}" alt="Birman" width="196" height="49" border="0"  title="" />
     <button class="button">botão</button>

@@ -6,6 +6,7 @@ const gulpVTL = require('gulp-velocityjs2');
 const del = require('del');
 const gulpRemoveCode = require('gulp-remove-code');
 const gulpHeader = require('gulp-header');
+const gulpInject = require('gulp-inject');
 
 function getThemes() {
   const src = './src/scss/themes';
@@ -75,9 +76,9 @@ function inlineCssTask({
     .pipe(
       gulpInlineCss({
         removeHtmlSelectors: true,
-        // applyTableAttributes: true,
+        applyTableAttributes: true,
         removeStyleTags: false,
-        // applyWidthAttributes: true,
+        applyWidthAttributes: true,
         extraCss,
       })
     )
@@ -118,7 +119,7 @@ function concatTask({ folder = '', commonFiles = [] } = {}) {
   return stream.pipe(gulp.dest(folder));
 }
 
-function getConcatTasksByThmes() {
+function getConcatTasks() {
   function generate(themeName = '') {
     return (themeConcatTask = () =>
       concatTask({
@@ -136,14 +137,43 @@ function getConcatTasksByThmes() {
   return tasks;
 }
 
+function injectCssTask({ themeName = '' }) {
+  return gulp
+    .src(`./src/temp/vm/${themeName}/*.vm`)
+    .pipe(
+      gulpInject(gulp.src(`./src/temp/css/themes/${themeName}.css`), {
+        transform: function (filePath, file) {
+          return file.contents.toString('utf8');
+        },
+        removeTags: true,
+      })
+    )
+    .pipe(gulp.dest(`./src/temp/vm/${themeName}`));
+}
+
+function getInjectCssTask() {
+  function generate(themeName = '') {
+    return (themeInjectCssTask = () =>
+      injectCssTask({
+        themeName,
+      }));
+  }
+
+  const tasks = config.themes.map(generate);
+
+  return tasks;
+}
+
 const inlineCSSTasks = getInlineCssTasksByThemes();
-const concatTasks = getConcatTasksByThmes();
+const concatTasks = getConcatTasks();
+const injectCssTasks = getInjectCssTask();
 
 const buildTask = gulp.series(
   delBuildTask,
   sassTask,
   gulp.parallel(...inlineCSSTasks),
   gulp.parallel(...concatTasks),
+  gulp.parallel(...injectCssTasks),
   htmlTask,
   vmTask
 );
