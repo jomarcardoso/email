@@ -66,6 +66,8 @@ function getCommonVmFiles({
   return files;
 }
 
+exports.getCommonVmFiles = getCommonVmFiles;
+
 const delBuildTask = (folders = []) => del(folders);
 
 function htmlTask({
