@@ -8,7 +8,31 @@ const gulpRemoveCode = require('gulp-remove-code');
 const gulpHeader = require('gulp-header');
 const gulpInject = require('gulp-inject');
 
-function getThemes(src = './src/scss/themes') {
+const config = {
+  paths: {
+    vm: {
+      src: './src/vm',
+      temp: './src/temp/vm',
+      dest: './dist/vm',
+    },
+    css: {
+      src: './src/scss',
+      dest: './src/temp/css',
+    },
+    vmInlineCss: {
+      dest: './dist',
+    },
+    html: {
+      dest: './dist/html',
+    },
+    src: './src',
+    temp: './src/temp',
+    dest: './dist',
+  },
+  themes: [],
+};
+
+function getThemes(src = `${config.paths.css.src}/themes`) {
   let themeFiles;
 
   try {
@@ -25,29 +49,8 @@ function getThemes(src = './src/scss/themes') {
   return themeFileNames;
 }
 
-exports.getThemes = getThemes;
-
-const config = {
-  paths: {
-    vm: {
-      src: './src/vm/common/**/*.vm',
-      temp: './src/temp/vm',
-      dest: './dist/vm',
-    },
-    vmInlineCss: {
-      dest: './dist',
-    },
-    html: {
-      dest: './dist/html',
-    },
-    temp: './src/temp',
-    dist: './dist',
-  },
-  themes: [],
-};
-
 function getCommonVmFiles({
-  folderPath = './src/vm/common',
+  folderPath = `${config.paths.vm.src}/common`,
   folderNames = ['variables', 'mocks', 'macros'],
 } = {}) {
   const files = [];
@@ -66,9 +69,8 @@ function getCommonVmFiles({
   return files;
 }
 
-exports.getCommonVmFiles = getCommonVmFiles;
-
-const delBuildTask = (folders = []) => del(folders);
+const delBuildTask = () =>
+  ((folders = [config.paths.dest, config.paths.temp]) => del(folders))();
 
 function htmlTask({
   src = `${config.paths.vm.temp}/**/*.vm`,
@@ -100,8 +102,8 @@ function vmTask({
 }
 
 function sassTask({
-  src = './src/scss/**/*.scss',
-  dest = './src/temp/css',
+  src = `${config.paths.css.src}/**/*.scss`,
+  dest = config.paths.css.dest,
 } = {}) {
   return gulp
     .src(src)
@@ -110,7 +112,7 @@ function sassTask({
 }
 
 function inlineCssTask({
-  src = config.paths.vm.src,
+  src = `${config.paths.vm.src}/common/**/*.vm`,
   extraCss = '',
   dest = config.paths.vm.temp,
 } = {}) {
@@ -142,9 +144,14 @@ function getInlineCssTasksByThemes() {
   function generate(themeName = '') {
     return (themeInlineCssTask = () =>
       inlineCssTask({
-        extraCss: getCssContentBySrc(`./src/temp/css/themes/${themeName}.css`),
+        extraCss: getCssContentBySrc(
+          `${config.paths.css.dest}/themes/${themeName}.css`
+        ),
         dest: `${config.paths.vm.temp}/${themeName}`,
-        src: [config.paths.vm.src, `./src/vm/themes/${themeName}/**/*.vm`],
+        src: [
+          `${config.paths.vm.src}/common/**/*.vm`,
+          `${config.paths.vm.src}/themes/${themeName}/**/*.vm`,
+        ],
       }));
   }
 
@@ -157,8 +164,11 @@ function concatTask({ folder = '', commonFiles = [] } = {}) {
   const stream = gulp.src(`${folder}/*.vm`);
 
   commonFiles.forEach((commonFile) => {
-    console.log(`${folder}/${commonFile}`);
-    stream.pipe(gulpHeader(fs.readFileSync(`${folder}/${commonFile}`, 'utf8')));
+    try {
+      stream.pipe(
+        gulpHeader(fs.readFileSync(`${folder}/${commonFile}`, 'utf8'))
+      );
+    } catch (error) {}
   });
 
   return stream.pipe(gulp.dest(folder));
@@ -168,7 +178,7 @@ function getConcatTasks() {
   function generate(themeName = '') {
     return (themeConcatTask = () =>
       concatTask({
-        folder: `./src/temp/vm/${themeName}`,
+        folder: `${config.paths.vm.temp}/${themeName}`,
         commonFiles: getCommonVmFiles(),
       }));
   }
@@ -180,16 +190,16 @@ function getConcatTasks() {
 
 function injectCssTask({ themeName = '' }) {
   return gulp
-    .src(`./src/temp/vm/${themeName}/*.vm`)
+    .src(`${config.paths.vm.temp}/${themeName}/*.vm`)
     .pipe(
-      gulpInject(gulp.src(`./src/temp/css/themes/${themeName}.css`), {
+      gulpInject(gulp.src(`${config.paths.css.dest}/themes/${themeName}.css`), {
         transform: function (filePath, file) {
           return file.contents.toString('utf8');
         },
         removeTags: true,
       })
     )
-    .pipe(gulp.dest(`./src/temp/vm/${themeName}`));
+    .pipe(gulp.dest(`${config.paths.vm.temp}/${themeName}`));
 }
 
 function getInjectCssTask() {
@@ -205,6 +215,10 @@ function getInjectCssTask() {
   return tasks;
 }
 
+exports.getThemes = getThemes;
+exports.getCommonVmFiles = getCommonVmFiles;
+exports.delBuild = delBuildTask;
+
 exports.default = (() => {
   config.themes = getThemes();
   const inlineCSSTasks = getInlineCssTasksByThemes();
@@ -212,7 +226,7 @@ exports.default = (() => {
   const injectCssTasks = getInjectCssTask();
 
   const buildTask = gulp.series(
-    () => delBuildTask([config.paths.dist, config.paths.temp]),
+    delBuildTask,
     sassTask,
     gulp.parallel(...inlineCSSTasks),
     gulp.parallel(...concatTasks),
@@ -222,7 +236,10 @@ exports.default = (() => {
   );
 
   function watchTask() {
-    return gulp.watch(['./src/**/*', '!./src/temp/**/*'], buildTask);
+    return gulp.watch(
+      [`${config.paths.src}/**/*`, `!${config.paths.src}/temp/**/*`],
+      buildTask
+    );
   }
 
   return gulp.series(buildTask, watchTask);
