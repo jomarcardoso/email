@@ -12,12 +12,12 @@ const config = {
   paths: {
     vm: {
       src: './src/vm',
-      temp: './src/temp/vm',
+      temp: './temp/vm',
       dest: './dist/vm',
     },
     css: {
       src: './src/scss',
-      dest: './src/temp/css',
+      dest: './temp/css',
     },
     vmInlineCss: {
       dest: './dist',
@@ -26,7 +26,7 @@ const config = {
       dest: './dist/html',
     },
     src: './src',
-    temp: './src/temp',
+    temp: './temp',
     dest: './dist',
   },
   themes: [],
@@ -72,7 +72,7 @@ function getCommonVmFiles({
 const delBuildTask = () =>
   ((folders = [config.paths.dest, config.paths.temp]) => del(folders))();
 
-function htmlTask({
+function viewHtmlSampleTask({
   src = `${config.paths.vm.temp}/**/*.vm`,
   dest = config.paths.html.dest,
 } = {}) {
@@ -86,7 +86,7 @@ function htmlTask({
     .pipe(gulp.dest(dest));
 }
 
-function vmTask({
+function distributionSourceVmTask({
   src = `${config.paths.vm.temp}/**/*.vm`,
   dest = config.paths.vm.dest,
 } = {}) {
@@ -160,7 +160,7 @@ function getInlineCssTasksByThemes() {
   return tasks;
 }
 
-function concatTask({ folder = '', commonFiles = [] } = {}) {
+function injectMacroTask({ folder = '', commonFiles = [] } = {}) {
   const stream = gulp.src(`${folder}/*.vm`);
 
   commonFiles.forEach((commonFile) => {
@@ -174,10 +174,10 @@ function concatTask({ folder = '', commonFiles = [] } = {}) {
   return stream.pipe(gulp.dest(folder));
 }
 
-function getConcatTasks() {
+function getInjectMacrosTasks() {
   function generate(themeName = '') {
     return (themeConcatTask = () =>
-      concatTask({
+      injectMacroTask({
         folder: `${config.paths.vm.temp}/${themeName}`,
         commonFiles: getCommonVmFiles(),
       }));
@@ -188,7 +188,7 @@ function getConcatTasks() {
   return tasks;
 }
 
-function injectCssTask({ themeName = '' }) {
+function injectStyleTagTask({ themeName = '' }) {
   return gulp
     .src(`${config.paths.vm.temp}/${themeName}/*.vm`)
     .pipe(
@@ -202,10 +202,10 @@ function injectCssTask({ themeName = '' }) {
     .pipe(gulp.dest(`${config.paths.vm.temp}/${themeName}`));
 }
 
-function getInjectCssTask() {
+function getInjectStyleTagTask() {
   function generate(themeName = '') {
     return (themeInjectCssTask = () =>
-      injectCssTask({
+      injectStyleTagTask({
         themeName,
       }));
   }
@@ -222,24 +222,21 @@ exports.delBuild = delBuildTask;
 exports.default = (() => {
   config.themes = getThemes();
   const inlineCSSTasks = getInlineCssTasksByThemes();
-  const concatTasks = getConcatTasks();
-  const injectCssTasks = getInjectCssTask();
+  const injectMacrosTasks = getInjectMacrosTasks();
+  const injectStyleTagTasks = getInjectStyleTagTask();
 
   const buildTask = gulp.series(
     delBuildTask,
     sassTask,
     gulp.parallel(...inlineCSSTasks),
-    gulp.parallel(...concatTasks),
-    gulp.parallel(...injectCssTasks),
-    htmlTask,
-    vmTask
+    gulp.parallel(...injectMacrosTasks),
+    gulp.parallel(...injectStyleTagTasks),
+    viewHtmlSampleTask,
+    distributionSourceVmTask
   );
 
   function watchTask() {
-    return gulp.watch(
-      [`${config.paths.src}/**/*`, `!${config.paths.src}/temp/**/*`],
-      buildTask
-    );
+    return gulp.watch(`${config.paths.src}/**/*`, buildTask);
   }
 
   return gulp.series(buildTask, watchTask);

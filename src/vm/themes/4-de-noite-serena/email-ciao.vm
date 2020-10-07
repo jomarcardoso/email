@@ -9,4 +9,5 @@
     <button class="button">botão</button>
   </div>
   <img src="${ctx.logoImage.url}" />
+  #contentBlock()
 #end
