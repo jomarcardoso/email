@@ -1,0 +1,21 @@
+.container,
+.container-fixed {
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  clear: both;
+  text-align: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container-fixed {
+  width: 600px;
+}
+
+.body {
+  height: 100% !important;
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+}
