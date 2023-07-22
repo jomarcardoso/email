@@ -1,0 +1,252 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homus</title>
+  <style>
+    img {
+      width: 100%;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    body {
+      margin: 0;
+      color: #191919;
+      font-weight: 200;
+      font-family: Dosis, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      background-color: #f8f8f8;
+      background-blend-mode: lighten(1.07);
+      background-image: url(https://caderninho-de-receitas.surge.sh/images/textures/paper-texture.png);
+    }
+
+    .logo {
+      color: #191919;
+      font-family: cinzel, times, serif;
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: 1;
+      text-align: justify;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .card {
+      background-color: #87695e;
+      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+      overflow: hidden;
+      border-radius: 3px;
+    }
+
+    .card-body {
+      background-color: #fff;
+      padding: 28px 12px;
+    }
+
+    .card-header {
+      color: #fff;
+      font-size: 17px;
+      margin: 0;
+      padding: 8px 0;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .name {
+      background-color: #87695e;
+      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+      color: #fff;
+      padding: 8px 0;
+    }
+
+    h1 {
+      font-family: cinzel, times, serif;
+      font-size: 23px;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    h2 {
+      font-family: cinzel, times, serif;
+      font-size: 23px;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .mini-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .flex-item {
+      display: flex;
+      padding: 5px 0;
+      justify-content: space-between;
+    }
+
+    .container-fluid {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .py-2 {
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
+    }
+
+    .mt-2 {
+      margin-top: 0.5rem;
+    }
+
+    .mt-4 {
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="py-2 container-fluid"
+    style="display: flex; text-align: center; justify-content: space-between; background-color: #fff;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);">
+    <svg class="icon MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
+      focusable="false" aria-hidden="true" viewBox="0 0 24 24"><svg
+        viewBox="0 0 512 512">
+        <path fill="currentColor"
+          d="M32 224c-17 0-32 14-32 32s15 32 32 32a32 32 0 000-64zm0-160C15 64 0 78 0 96s15 32 32 32a32 32 0 000-64zm0 320c-17 0-32 14-32 32s15 32 32 32a32 32 0 000-64zM504 80H136a8 8 0 00-8 8v16a8 8 0 008 8h368a8 8 0 008-8V88a8 8 0 00-8-8zm0 160H136a8 8 0 00-8 8v16a8 8 0 008 8h368a8 8 0 008-8v-16a8 8 0 00-8-8zm0 160H136a8 8 0 00-8 8v16a8 8 0 008 8h368a8 8 0 008-8v-16a8 8 0 00-8-8z">
+        </path>
+      </svg></svg>
+
+    <div class="logo">
+      <div style="color: #87695e">
+        Caderninho
+      </div>
+      <div style="font-size: 17px; letter-spacing: .1px;">
+        de receitas
+      </div>
+    </div>
+
+    <svg class="icon MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
+      focusable="false" aria-hidden="true" viewBox="0 0 24 24"><svg
+        viewBox="0 0 512 512">
+        <path fill="currentColor"
+          d="M416 32a95 95 0 00-58 20 127 127 0 00-204 0A96 96 0 000 128c0 42 64 224 64 224v128a32 32 0 0032 32h320a32 32 0 0032-32V352s64-182 64-224a96 96 0 00-96-96zm0 448H96v-96h320zm0-128h-44l12-151a8 8 0 00-7-8l-16-2h-1a8 8 0 00-8 8l-12 153h-69V200a8 8 0 00-8-8h-16a8 8 0 00-8 8v152h-67l-12-153a8 8 0 00-8-8h-1l-16 2a8 8 0 00-7 8l12 151H96S32 151 32 128a64 64 0 0164-64 63 63 0 0138 13l26 20 19-26a95 95 0 01154 0l19 26 26-20a63 63 0 0138-13 64 64 0 0164 64c0 23-64 224-64 224z">
+        </path>
+      </svg></svg>
+  </header>
+
+  <div class="name">
+    <h1 class="container-fluid">
+      Homus
+    </h1>
+  </div>
+
+  <img alt="" class="img w-100" style="max-height: 180px; object-fit: cover;"
+    src="https://static.clubedaanamariabraga.com.br/wp-content/uploads/2019/03/homus-1024x768.jpg">
+
+  <div class="container-fluid">
+    <p class="mt-4">
+      Uma receita festiva e impactante, para impressionar os convidados. Um
+      homus
+      lisinho e macio serve de base para uma combinação de cordeiro, cebola,
+      molho
+      de romã e tahine que faz o jantar valer por uma viagem.
+    </p>
+
+    <div class="card mt-4">
+      <h2 class="card-header">
+        <div class="container-fluid">
+          Ingredientes
+        </div>
+      </h2>
+
+      <div class="card-body">
+        <h2 class="text-center">
+          Ingredientes
+        </h2>
+
+        <ul class="mt-3">
+          <li>
+            <img class="mini-icon"
+              src="https://caderninho-de-receitas.surge.sh/images/food/chickpea.png"
+              alt="">
+            1 ⅓ de xícara (chá) de grão-de-bico
+          </li>
+
+          <li>
+            <img class="mini-icon"
+              src="https://caderninho-de-receitas.surge.sh/images/food/baking-soda.png"
+              alt="">
+            1 colher (chá) de bicarbonato de sódio
+          </li>
+
+          <li>
+            <img class="mini-icon"
+              src="https://caderninho-de-receitas.surge.sh/images/food/water.svg"
+              alt="">
+            4 xícaras (chá) de água
+          </li>
+        </ul>
+
+        <h2 class="text-center mt-4">
+          Modo de preparo
+        </h2>
+
+        <p class="mt-3">
+          Numa tigela grande coloque o grão-de-bico, cubra com a água e misture
+          o bicarbonato. Cubra com um prato e deixe de molho por pelo menos 8
+          horas (se preferir, deixe o grão-de-bico de molho na noite anterior).
+        </p>
+      </div>
+    </div>
+
+    <h2 class="mt-4">
+      Informações nutricionais
+    </h2>
+
+    <ul class="mt-3">
+      <li class="flex-item">
+        <span>Calorias</span>
+        <span>946</span>
+      </li>
+
+      <li class="flex-item">
+        <span>Carboidratos</span>
+        <span>200</span>
+      </li>
+
+      <li class="flex-item">
+        <span>Proteínas</span>
+        <span>56</span>
+      </li>
+
+      <li class="flex-item">
+        <span>Gorduras totais</span>
+        <span>200</span>
+      </li>
+
+      <li class="flex-item">
+        <span>Fibras</span>
+        <span>33</span>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>
