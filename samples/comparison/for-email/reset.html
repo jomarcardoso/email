@@ -1,0 +1,550 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!-- Using that, iOS will no longer auto-detect and style phone numbers -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width">
+  <!--[if gte mso 9]>
+      <style type="text/css">
+        /* Your Outlook-specific CSS goes here. */
+        </style>
+    <![endif]-->
+
+  <!-- inject CSS -->
+
+  <!-- <link rel="stylesheet" href="./styles/jomar.css"> -->
+</head>
+
+<body style="margin: 0px; min-width: 100%;">
+  <style>
+    img {
+      <br>width: 100%;
+      <br>
+    }
+
+    <br><br>ul {
+      <br>list-style: none;
+      <br>padding-left: 0;
+      <br>
+    }
+
+    <br><br>p {
+      <br>margin-bottom: 0;
+      <br>
+    }
+
+    <br><br>.jo-body {
+      <br>margin: 0;
+      <br>color: #191919;
+      <br>font-weight: 200;
+      <br>font-family: Dosis, Roboto, Helvetica, Arial, sans-serif;
+      <br>font-size: 1rem;
+      <br>line-height: 1.5;
+      <br>background-color: #f8f8f8;
+      <br>background-blend-mode: lighten(1.07);
+      <br>background-image: url(https://caderninho-de-receitas.surge.sh/images/textures/paper-texture.png);
+      <br>
+    }
+
+    <br><br>.logo {
+      <br>color: #191919;
+      <br>font-family: cinzel, times, serif;
+      <br>font-size: 16px;
+      <br>letter-spacing: 0;
+      <br>line-height: 1;
+      <br>text-align: justify;
+      <br>text-decoration: none;
+      <br>white-space: nowrap;
+      <br>
+    }
+
+    <br><br>.card {
+      <br>background-color: #87695e;
+      <br>box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), <br> 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+      <br>overflow: hidden;
+      <br>border-radius: 3px;
+      <br>
+    }
+
+    <br><br>.card-body {
+      <br>background-color: #fff;
+      <br>padding: 28px 12px;
+      <br>
+    }
+
+    <br><br>.card-header {
+      <br>color: #fff;
+      <br>font-size: 17px;
+      <br>margin: 0;
+      <br>padding: 8px 0;
+      <br>
+    }
+
+    <br><br>.icon {
+      <br>width: 24px;
+      <br>height: 24px;
+      <br>
+    }
+
+    <br><br>.name {
+      <br>background-color: #87695e;
+      <br>box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), <br> 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+      <br>color: #fff;
+      <br>padding: 8px 0;
+      <br>
+    }
+
+    <br><br>h1 {
+      <br>font-family: cinzel, times, serif;
+      <br>font-size: 23px;
+      <br>letter-spacing: 1px;
+      <br>line-height: 1.2;
+      <br>font-weight: normal;
+      <br>margin: 0;
+      <br>
+    }
+
+    <br><br>h2 {
+      <br>font-family: cinzel, times, serif;
+      <br>font-size: 23px;
+      <br>letter-spacing: 1px;
+      <br>line-height: 1.2;
+      <br>font-weight: normal;
+      <br>margin: 0;
+      <br>
+    }
+
+    <br><br>.mini-icon {
+      <br>width: 20px;
+      <br>height: 20px;
+      <br>
+    }
+
+    <br><br>.flex-item {
+      <br>display: flex;
+      <br>padding: 5px 0;
+      <br>justify-content: space-between;
+      <br>
+    }
+
+    <br><br>.container-fluid {
+      <br>padding-left: 16px;
+      <br>padding-right: 16px;
+      <br>
+    }
+
+    <br><br>.py-2 {
+      <br>padding-bottom: 0.5rem;
+      <br>padding-top: 0.5rem;
+      <br>
+    }
+
+    <br><br>.mt-2 {
+      <br>margin-top: 0.5rem;
+      <br>
+    }
+
+    <br><br>.mt-4 {
+      <br>margin-top: 1.5rem;
+      <br>
+    }
+
+    <br>
+  </style>
+  <style>
+    .container,
+    <br>.container-fixed {
+      <br>max-width: 600px;
+      <br>display: block;
+      <br>margin: 0 auto;
+      <br>clear: both;
+      <br>text-align: left;
+      <br>padding-left: 15px;
+      <br>padding-right: 15px;
+      <br>
+    }
+
+    <br><br>.container-fixed {
+      <br>width: 600px;
+      <br>
+    }
+
+    <br><br>.body {
+      <br>height: 100% !important;
+      <br>margin: 0;
+      <br>padding: 0;
+      <br>width: 100% !important;
+      <br>
+    }
+
+    <br>
+  </style>
+  <style>
+    body {
+      <br>margin: 0;
+      <br>padding: 0;
+      <br>min-width: 100%;
+      <br>
+    }
+
+    <br><br>img {
+      <br>
+      /* for images not loaded */
+      <br>border: 0 none;
+      <br>height: auto;
+      <br>line-height: 100%;
+      <br>outline: none;
+      <br>text-decoration: none;
+      <br>
+    }
+
+    <br><br>a img {
+      <br>border: 0 none;
+      <br>
+    }
+
+    <br><br>
+
+    /* reset table to use for structuring the page */
+    <br>table {
+      <br>border-spacing: 0;
+      <br>border-collapse: collapse;
+      <br>width: 100%;
+      <br>
+    }
+
+    <br><br>
+
+    /* reset table to use for structuring the page */
+    <br>td {
+      <br>padding: 0;
+      <br>text-align: left;
+      <br>word-break: break-word;
+      <br>-webkit-hyphens: auto;
+      <br>-moz-hyphens: auto;
+      <br>hyphens: auto;
+      <br>border-collapse: collapse !important;
+      <br>
+    }
+
+    <br><br>body,
+    <br>table,
+    <br>td,
+    <br>p,
+    <br>a,
+    <br>li,
+    <br>blockquote {
+      <br>-webkit-text-size-adjust: 100%;
+      <br>-ms-text-size-adjust: 100%;
+      <br>
+    }
+
+    <br><br>
+    /* specific clientes */
+    <br>
+    /* https://templates.mailchimp.com/development/css/client-specific-styles/ */
+    <br>
+    /* https://www.htmlemailcheck.com/knowledge-base/recommended-externalclass-css-fix-outlook-com/ */
+    <br><br>
+    /* ### Outlook.com / Hotmail */
+    <br><br>
+
+    /*<br>.ExternalClass Class Override<br><br>By default, Outlook.com centers your email by placing it inside a div with a class named “ExternalClass” using the styles display:inline-block; line-height: 131%. These have no effect when using IE, however in every other browser, the email will not be centered.<br><br>To overwrite these styles and a number of additional fixes simply include the following CSS .ExternalClass within the <head></head> of your emails HTML<br><br>*/
+    <br>.ExternalClass {
+      <br>width: 100%;
+      <br>
+    }
+
+    <br><br>
+
+    /*<br>When an email is pulled into Outlook.com / Hotmail, any style rules present in the email are appended with .ExternalClass. Normalizing a few of these can help create a baseline for you to work from.<br>*/
+    <br>.ExternalClass,
+    <br>.ExternalClass p,
+    <br>.ExternalClass span,
+    <br>.ExternalClass font,
+    <br>.ExternalClass td,
+    <br>.ExternalClass div {
+      <br>line-height: 100%;
+      <br>
+    }
+
+    <br><br>
+    /*<br><hX> Color Override<br><br>Outlook.com / Hotmail sets its own (gross green) color on heading elements lower in level than an <h1> element. This means you need to account for headings <h2> through <h6>. Fortunately, it’s as easy as applying a !important declaration to the heading’s color property:<br><br>I think it's not necesary<br>h2 {<br>  color:#0066CC !important;<br>}<br>*/
+    <br><br>
+
+    /* https://github.com/seanpowell/Email-Boilerplate/issues/10 */
+    <br>.ReadMsgBody {
+      <br>width: 100%;
+      <br>
+    }
+
+    <br><br>
+    /* Outlook 2007 / 2010 / 2013 */
+    <br><br>
+
+    /*<br>“Read in Browser” Link<br><br>It’s possible, in Outlook, to trigger the appearance of a fairly prominent “View this email in your browser” bar within the application, allowing you to drive people to view your email in a browser which will render it in a much better way than Outlook ever can.<br>*/
+    <br>#outlook a {
+      <br>padding: 0;
+      <br>
+    }
+
+    <br><br>
+
+    /*<br><table> Element Spacing<br><br>Outlook can sometimes add a bit of spacing on the left and right side of a <table> element that can cause some layout-related headaches. By using the vendor-specific mso-table-lspace and mso-table-rspace CSS properties, you can be rid of those spaces and continue on to tackle the million other problems caused by Outlook.<br>*/
+    <br>table,
+    <br>td {
+      <br>mso-table-lspace: 0pt;
+      <br>mso-table-rspace: 0pt;
+      <br>
+    }
+
+    <br><br>
+
+    /*<br>Image Resizing<br><br>Using width or height tags to resize images in your markup can create a problem in Internet Explorer browsers. If your reader is viewing an email in-browser, and that email happens to have fluid images in it, they’ll look pretty ugly as they resize. Using -ms-interpolation-mode:bicubic; ensures that your images look a little better.<br>*/
+    <br>img,
+    <br>a img {
+      <br>-ms-interpolation-mode: bicubic;
+      <br>
+    }
+
+    <br><br>
+    /* ### OSX / iOS */
+    <br><br>
+
+    /*<br>WebKit Text Size Adjustment<br><br>WebKit looks for any text that happens to be sized smaller than 13px and increases it to that number, which can sometimes cause design issues in places intended for small text. Setting -webkit-text-size-adjust to none will prevent iOS platforms from resizing the text, but this method also prevents OSX applications like Safari from bumping the text size up - something that can cause issues for people who need the text size to be large. Setting -webkit-text-size-adjust to 100% seems to be the best of both worlds.<br>*/
+    <br>body {
+      <br>-webkit-text-size-adjust: 100%;
+      <br>
+    }
+
+    <br><br>a[x-apple-data-detectors] {
+      <br>color: inherit;
+      <br>text-decoration: none;
+      <br>font-size: inherit;
+      <br>font-family: inherit;
+      <br>font-weight: inherit;
+      <br>line-height: inherit;
+      <br>
+    }
+
+    <br><br>
+    /* ### Windows Mobile */
+    <br><br>
+
+    /*<br>Windows Mobile Text Size Adjustment<br><br>Much like in OSX and iOS, small text is also resized on Windows Mobile. The same vendor-prefix-based CSS property is used here, just with the ms vendor prefix instead of the webkit one.<br>*/
+    <br>body {
+      <br>-ms-text-size-adjust: 100%;
+      <br>
+    }
+
+    <br><br>
+
+    /* ### Android */
+    <br><br>div[style*='margin: 16px 0;'] {
+      <br>margin: 0;
+      <br>
+    }
+
+    <br>
+  </style>
+  <table class="body" style="border-collapse: collapse; border-spacing: 0px;"
+    role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody>
+      <tr
+        style="border-color: rgb(128, 128, 128); border-collapse: collapse; vertical-align: middle;">
+        <td
+          style="border-collapse: collapse; hyphens: auto; padding: 0px; text-align: left; vertical-align: middle; word-break: break-word;">
+          <!-- <center> -->
+
+          <!--[if mso]>
+            <table><tr><td class="container-fixed" style="width: 600px;">
+          <![endif]-->
+          <div class="container"
+            style="border-collapse: collapse; clear: both; hyphens: auto; max-inline-size: 600px; max-width: 600px; padding-left: 15px; padding-right: 15px; text-align: left; word-break: break-word;">
+
+            <div class="jo-body"
+              style="background-color: rgb(248, 248, 248); background-image: url(&quot;https://caderninho-de-receitas.surge.sh/images/textures/paper-texture.png&quot;); border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; hyphens: auto; line-height: 24px; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+              <header class="py-2 container-fluid"
+                style="display: flex; text-align: center; justify-content: space-between; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px; border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 33px; hyphens: auto; line-height: 24px; padding: 8px 16px; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                <img class="icon"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAETSURBVEhL7ZYxEkRAEEX3Gu4gFruDE0jEihKIlBLaTCCUil1AtIeQKbHIBezv7qndzGxhNpoXzXSp/4rWxmM3jBVoUYJlWdZ1lfW9kKAsS8dxXNftuk6qwusyCCGB53kQgDAMOZmo61qKV0AOCZIkkX1VVRxOTNMExzFPRm14+1nIGjkkQAP6vh/Hcds2Dr8T1WRzWIGWvwiGYYjjuGkaGY17IUEURTIHaZpKFeBFluJpfN9HDgmCIJBSnuccTmBMpHiarwBPBg7cxzzPHH4nf2myUaxACwmMf66zLJM3V44I4ZcD5xiMKnJIIOkA08DhBK5Q1QsghwRFUWCDQ79tWw5X8Ll9CYSoJpv9bTGKFWjY9zcA/lNP1H9EQwAAAABJRU5ErkJggg=="
+                  style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: block; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; line-height: 16px; min-block-size: auto; min-height: auto; min-width: auto; text-align: center; text-decoration: none solid rgb(25, 25, 25); width: 24px; word-break: break-word;">
+
+                <div class="logo"
+                  style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: cinzel, times, serif; font-weight: 200; height: 33px; hyphens: auto; line-height: 16px; min-block-size: auto; min-height: auto; min-width: auto; text-align: justify; text-decoration: none solid rgb(25, 25, 25); text-wrap: nowrap; word-break: break-word;">
+                  <div
+                    style="color: rgb(135, 105, 94); border-color: rgb(135, 105, 94); border-collapse: collapse; font-family: cinzel, times, serif; font-weight: 200; height: 16px; hyphens: auto; line-height: 16px; text-align: justify; text-decoration: none solid rgb(135, 105, 94); text-wrap: nowrap; word-break: break-word;">
+                    Caderninho
+                  </div>
+                  <div
+                    style="font-size: 17px; letter-spacing: 0.1px; border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: cinzel, times, serif; font-weight: 200; height: 16px; hyphens: auto; line-height: 16px; text-align: justify; text-decoration: none solid rgb(25, 25, 25); text-wrap: nowrap; word-break: break-word;">
+                    de receitas
+                  </div>
+                </div>
+
+                <img class="icon"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMmSURBVEhL7ZbNK6xhGMbPv2ElZqFTsjkrs7LxbaFYDEJZWFAsJF8LX4tZOGmQhMTCThSKsqBILAglSqGUlBLT1GT3nt973/e8Yzg+DnPqLM5vMd3X9dxzX+/MPO/zzjfnL/OhgOPj45GRkeLi4u8CBRLTlt/k/YCJiYmMjIwU4YegNSZL1vQ68YD7+/v+/v66urrs7OzMzMyOjo6rq6uBgQEdR7G/v6+dFJ7f3t6+trZWXV3Nu5C81tbWXl9faydYwMHBQX5+Ph36Dch740xPT2vbU7wMj7KyMq5M65OTE21zAzY2NtLT03G7urrUDYfDMzMzhGHOzc2p+ZLt7W0aaOMKbm5u1GQIZlZWViQSQboBwWAQa3R0VBriXF5etrS0mHiF8fHx3d1dEzEYxcDu7m5qN6C0tBR9dHQkq0ng/PycgSUlJdRuAAJkKWnwe+hMNyAnJwexs7MjS0kgGo0ykLHUbkB9fT06FArJahJg4zKQsdRugG64QCAgq0mgs7OTgYyldgPOzs7QaWlpj4+P0uCytLTE98iraYGL0uvy4MB42eb3+xnIvUXtBkBhYSHW1taWSpicnMTp6+szLeCACWFlZQWHZtOOw27E4T5QaQFDQ0O4g4ODKmFhYQGnra3NtIADJoTZ2Vkcmk3HboLm5maVFnB4eIhbUVGhEjY3N3EaGxtNCzhgQhgeHsah2bTjVFZW4hCs0gIgNzeXhYuLC5Wnp6fImpoalQoOmBB6enpwaFZ5e3vr8/lwOAXUiQdo69jYmMq7uzskP6BKBQdMCE1NTTg0q1xdXUVWVVWphHjA+vo6a+Xl5aZlXF5engkBB0wIHNRPnd7eXuTU1JTppwGgh60Jx0lNTWXDmRDc8YkBnO20mXCcoqIiGh4eHkw/C2hoaGB5fn5eJQ8vb7cpMj8hgCcMbVrv7e2xymdSqSQELC8v08EtzUEPBQUFPCe0VmR+igmBBydtWnN0s7q4uGjjhIQAmnTEV2CIjRN+E8DO4Rh5g58xvFp9+GiA6T/kf8C7/AMBnFAa8Gl4u3fMKQkBwD9G79/ZJ2htbbVBMZ4HJBnH+QVE3BUWdgky9gAAAABJRU5ErkJggg=="
+                  style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: block; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; line-height: 16px; min-block-size: auto; min-height: auto; min-width: auto; text-align: center; text-decoration: none solid rgb(25, 25, 25); width: 24px; word-break: break-word;">
+              </header>
+
+              <main>
+                <div class="name"
+                  style="background-color: rgb(135, 105, 94); border-color: rgb(255, 255, 255); border-collapse: collapse; box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px; color: rgb(255, 255, 255); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; hyphens: auto; line-height: 24px; padding-bottom: 8px; padding-top: 8px; text-align: left; text-decoration: none solid rgb(255, 255, 255); word-break: break-word;">
+                  <h1 class="container-fluid"
+                    style="border-color: rgb(255, 255, 255); border-collapse: collapse; color: rgb(255, 255, 255); font-family: cinzel, times, serif; font-size: 23px; font-weight: 400; hyphens: auto; letter-spacing: 1px; line-height: 27.6px; margin-bottom: 0px; margin-top: 0px; padding-left: 16px; padding-right: 16px; text-align: left; text-decoration: none solid rgb(255, 255, 255); word-break: break-word;">
+                    Homus
+                  </h1>
+                </div>
+
+                <img alt="" class="img w-100"
+                  style="object-fit: cover; border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 180px; hyphens: auto; line-height: 16px; max-block-size: 180px; max-height: 180px; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;"
+                  src="https://static.clubedaanamariabraga.com.br/wp-content/uploads/2019/03/homus-1024x768.jpg">
+
+                <div class="container-fluid"
+                  style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; hyphens: auto; line-height: 24px; padding-left: 16px; padding-right: 16px; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                  <p class="mt-4"
+                    style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 120px; hyphens: auto; line-height: 24px; margin-bottom: 0px; margin-top: 24px; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                    Uma receita festiva e impactante, para impressionar os
+                    convidados. Um
+                    homus
+                    lisinho e macio serve de base para uma combinação de
+                    cordeiro,
+                    cebola,
+                    molho
+                    de romã e tahine que faz o jantar valer por uma viagem.
+                  </p>
+
+                  <div class="card mt-4"
+                    style="background-color: rgb(135, 105, 94); border-color: rgb(25, 25, 25); border-radius: 3px; border-collapse: collapse; border-end-end-radius: 3px; border-end-start-radius: 3px; border-start-end-radius: 3px; border-start-start-radius: 3px; box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; hyphens: auto; line-height: 24px; margin-top: 24px; overflow: hidden; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                    <h2 class="card-header"
+                      style="border-color: rgb(255, 255, 255); border-collapse: collapse; color: rgb(255, 255, 255); font-family: cinzel, times, serif; font-size: 17px; font-weight: 400; hyphens: auto; letter-spacing: 1px; line-height: 20.4px; margin-bottom: 0px; margin-top: 0px; padding-bottom: 8px; padding-top: 8px; text-align: left; text-decoration: none solid rgb(255, 255, 255); word-break: break-word;">
+                      <div class="container-fluid"
+                        style="border-color: rgb(255, 255, 255); border-collapse: collapse; color: rgb(255, 255, 255); font-family: cinzel, times, serif; font-size: 17px; hyphens: auto; letter-spacing: 1px; line-height: 20.4px; padding-left: 16px; padding-right: 16px; text-align: left; text-decoration: none solid rgb(255, 255, 255); word-break: break-word;">
+                        Ingredientes
+                      </div>
+                    </h2>
+
+                    <div class="card-body"
+                      style="background-color: rgb(255, 255, 255); border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; hyphens: auto; line-height: 24px; padding: 28px 12px; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                      <h2 class="text-center"
+                        style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: cinzel, times, serif; font-size: 23px; font-weight: 400; hyphens: auto; letter-spacing: 1px; line-height: 27.6px; margin-bottom: 0px; margin-top: 0px; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                        Ingredientes
+                      </h2>
+
+                      <ul class="mt-3"
+                        style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; hyphens: auto; line-height: 24px; list-style-type: none; padding-left: 0px; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                        <li
+                          style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; hyphens: auto; line-height: 24px; list-style-type: none; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                          <img class="mini-icon"
+                            src="https://caderninho-de-receitas.surge.sh/images/food/chickpea.png"
+                            alt=""
+                            style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 20px; hyphens: auto; line-height: 16px; list-style-type: none; text-align: left; text-decoration: none solid rgb(25, 25, 25); width: 20px; word-break: break-word;">
+                          1 ⅓ de xícara (chá) de grão-de-bico
+                        </li>
+
+                        <li
+                          style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; hyphens: auto; line-height: 24px; list-style-type: none; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                          <img class="mini-icon"
+                            src="https://caderninho-de-receitas.surge.sh/images/food/baking-soda.png"
+                            alt=""
+                            style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 20px; hyphens: auto; line-height: 16px; list-style-type: none; text-align: left; text-decoration: none solid rgb(25, 25, 25); width: 20px; word-break: break-word;">
+                          1 colher (chá) de bicarbonato de sódio
+                        </li>
+
+                        <li
+                          style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; hyphens: auto; line-height: 24px; list-style-type: none; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                          <img class="mini-icon"
+                            src="https://caderninho-de-receitas.surge.sh/images/food/water.svg"
+                            alt=""
+                            style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 20px; hyphens: auto; line-height: 16px; list-style-type: none; text-align: left; text-decoration: none solid rgb(25, 25, 25); width: 20px; word-break: break-word;">
+                          4 xícaras (chá) de água
+                        </li>
+                      </ul>
+
+                      <h2 class="text-center mt-4"
+                        style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: cinzel, times, serif; font-size: 23px; font-weight: 400; hyphens: auto; letter-spacing: 1px; line-height: 27.6px; margin-bottom: 0px; margin-top: 24px; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                        Modo de preparo
+                      </h2>
+
+                      <p class="mt-3"
+                        style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 120px; hyphens: auto; line-height: 24px; margin-bottom: 0px; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                        Numa tigela grande coloque o grão-de-bico, cubra com a
+                        água e
+                        misture
+                        o bicarbonato. Cubra com um prato e deixe de molho por
+                        pelo menos 8
+                        horas (se preferir, deixe o grão-de-bico de molho na
+                        noite
+                        anterior).
+                      </p>
+                    </div>
+                  </div>
+
+                  <h2 class="mt-4"
+                    style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: cinzel, times, serif; font-size: 23px; font-weight: 400; hyphens: auto; letter-spacing: 1px; line-height: 27.6px; margin-bottom: 0px; margin-top: 24px; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                    Informações nutricionais
+                  </h2>
+
+                  <ul class="mt-3"
+                    style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 170px; hyphens: auto; line-height: 24px; list-style-type: none; padding-left: 0px; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                    <li class="flex-item"
+                      style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: flex; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; justify-content: space-between; line-height: 24px; list-style-type: none; padding-bottom: 5px; padding-top: 5px; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                      <span
+                        style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: block; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; line-height: 24px; list-style-type: none; min-block-size: auto; min-height: auto; min-width: auto; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">Calorias</span>
+                      <span
+                        style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: block; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; line-height: 24px; list-style-type: none; min-block-size: auto; min-height: auto; min-width: auto; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">946</span>
+                    </li>
+
+                    <li class="flex-item"
+                      style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: flex; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; justify-content: space-between; line-height: 24px; list-style-type: none; padding-bottom: 5px; padding-top: 5px; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                      <span
+                        style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: block; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; line-height: 24px; list-style-type: none; min-block-size: auto; min-height: auto; min-width: auto; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">Carboidratos</span>
+                      <span
+                        style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: block; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; line-height: 24px; list-style-type: none; min-block-size: auto; min-height: auto; min-width: auto; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">200</span>
+                    </li>
+
+                    <li class="flex-item"
+                      style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: flex; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; justify-content: space-between; line-height: 24px; list-style-type: none; padding-bottom: 5px; padding-top: 5px; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                      <span
+                        style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: block; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; line-height: 24px; list-style-type: none; min-block-size: auto; min-height: auto; min-width: auto; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">Proteínas</span>
+                      <span
+                        style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: block; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; line-height: 24px; list-style-type: none; min-block-size: auto; min-height: auto; min-width: auto; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">56</span>
+                    </li>
+
+                    <li class="flex-item"
+                      style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: flex; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; justify-content: space-between; line-height: 24px; list-style-type: none; padding-bottom: 5px; padding-top: 5px; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                      <span
+                        style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: block; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; line-height: 24px; list-style-type: none; min-block-size: auto; min-height: auto; min-width: auto; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">Gorduras
+                        totais</span>
+                      <span
+                        style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: block; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; line-height: 24px; list-style-type: none; min-block-size: auto; min-height: auto; min-width: auto; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">200</span>
+                    </li>
+
+                    <li class="flex-item"
+                      style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: flex; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; justify-content: space-between; line-height: 24px; list-style-type: none; padding-bottom: 5px; padding-top: 5px; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">
+                      <span
+                        style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: block; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; line-height: 24px; list-style-type: none; min-block-size: auto; min-height: auto; min-width: auto; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">Fibras</span>
+                      <span
+                        style="border-color: rgb(25, 25, 25); border-collapse: collapse; color: rgb(25, 25, 25); display: block; font-family: Dosis, Roboto, Helvetica, Arial, sans-serif; font-weight: 200; height: 24px; hyphens: auto; line-height: 24px; list-style-type: none; min-block-size: auto; min-height: auto; min-width: auto; text-align: left; text-decoration: none solid rgb(25, 25, 25); word-break: break-word;">33</span>
+                    </li>
+                  </ul>
+                </div>
+              </main>
+            </div>
+
+          </div>
+          <!--[if mso]>
+            </td></tr></table>
+          <![endif]-->
+
+          <!-- </center> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</body>
+
+</html>

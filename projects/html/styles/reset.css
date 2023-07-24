@@ -27,7 +27,6 @@ table {
 /* reset table to use for structuring the page */
 td {
   padding: 0;
-  text-align: left;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;

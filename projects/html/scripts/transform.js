@@ -93,6 +93,22 @@ const PROPERTIES_TO_IGNORE = [
   'padding-inline',
   'padding-inline-end',
   'padding-inline-start',
+  '-webkit-text-fill-color',
+  '-webkit-text-stroke-color',
+  'text-emphasis-color',
+  'column-rule-color',
+  'border-inline-color',
+  'border-inline-start-color',
+  'border-inline-end-color',
+  'border-block-color',
+  'border-block-start-color',
+  'border-block-end-color',
+  'outline-color',
+  'caret-color',
+  'text-size-adjust',
+  'max-inline-size',
+  'max-inline-start-size',
+  'max-inline-end-size',
 ];
 
 /**

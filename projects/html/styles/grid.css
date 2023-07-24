@@ -1,12 +1,17 @@
-.container,
-.container-fixed {
+.container {
+  width: 100%;
   max-width: 600px;
-  display: block;
-  margin: 0 auto;
-  clear: both;
   text-align: left;
-  padding-left: 15px;
-  padding-right: 15px;
+}
+
+/*
+  Then, to appease Apple Mail, which doesn’t respect max-width, create a media
+  query to limit that table’s size on desktop:
+*/
+@media screen and (min-width: 601px) {
+  .container {
+    width: 600px !important;
+  }
 }
 
 .container-fixed {
