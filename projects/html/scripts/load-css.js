@@ -7,9 +7,12 @@ async function loadCSS(files = []) {
     const response = await fetch(`./styles/${file}.css`);
     const css = await response.text();
     const styleTag = document.createElement('style');
+    // const rootEl = document.querySelector('.body');
 
-    styleTag.innerText = css;
+    styleTag.innerHTML = css;
+
     document.head.insertAdjacentElement('beforeend', styleTag);
+    // rootEl.insertAdjacentElement('afterbegin', styleTag);
     document.body.insertAdjacentElement('afterbegin', styleTag);
   });
 }

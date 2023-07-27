@@ -2,6 +2,8 @@
  *
  * @param {HTMLElement} rootEl
  */
-function cleanMarkup(rootEl = document.querySelector('.body')) {
-  document.documentElement.innerHTML = rootEl.outerHTML;
+function cleanMarkup() {
+  // document.documentElement.innerHTML = rootEl.outerHTML;
+  Array.from(document.querySelectorAll('script')).forEach((el) => el.remove());
+  // document.querySelector('head').remove();
 }

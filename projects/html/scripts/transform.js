@@ -78,21 +78,21 @@ const PROPERTIES_TO_IGNORE = [
   'view-transition-name',
   'accent-color',
   'zoom',
-  'margin-block',
-  'margin-block-end',
-  'margin-block-start',
-  'margin-inline',
-  'margin-inline-end',
-  'margin-inline-start',
+  // 'margin-block',
+  // 'margin-block-end',
+  // 'margin-block-start',
+  // 'margin-inline',
+  // 'margin-inline-end',
+  // 'margin-inline-start',
   'min-inline-size',
   'border-block-color',
   'border-inline-color',
-  'padding-block',
-  'padding-block-end',
-  'padding-block-start',
-  'padding-inline',
-  'padding-inline-end',
-  'padding-inline-start',
+  // 'padding-block',
+  // 'padding-block-end',
+  // 'padding-block-start',
+  // 'padding-inline',
+  // 'padding-inline-end',
+  // 'padding-inline-start',
   '-webkit-text-fill-color',
   '-webkit-text-stroke-color',
   'text-emphasis-color',
@@ -148,8 +148,6 @@ function getAppliedCSS(el) {
 function applyCSSstyles(els = []) {
   els.forEach((el) => {
     const styles = getAppliedCSS(el);
-
-    console.log(styles);
 
     Object.entries(styles).forEach(([key, value]) => {
       el.style[camelize(key)] = value;

@@ -17,6 +17,11 @@ a img {
   border: 0 none;
 }
 
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 /* reset table to use for structuring the page */
 table {
   border-spacing: 0;
@@ -100,6 +105,11 @@ It’s possible, in Outlook, to trigger the appearance of a fairly prominent “
 */
 #outlook a {
   padding: 0;
+}
+
+ul {
+  /* remove the padding-left before send in outlook */
+  padding-inline-start: 0;
 }
 
 /*
