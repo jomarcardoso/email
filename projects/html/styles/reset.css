@@ -4,6 +4,10 @@ body {
   min-width: 100%;
 }
 
+p {
+  margin: 0;
+}
+
 img {
   /* for images not loaded */
   border: 0 none;
@@ -11,6 +15,9 @@ img {
   line-height: 100%;
   outline: none;
   text-decoration: none;
+  /* remove white space after image */
+  /* display: block; */
+  max-width: 100%;
 }
 
 a img {
@@ -37,6 +44,10 @@ td {
   -moz-hyphens: auto;
   hyphens: auto;
   border-collapse: collapse !important;
+}
+
+td:not([align]) {
+  text-align: left;
 }
 
 body,

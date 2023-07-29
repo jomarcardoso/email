@@ -1,0 +1,27 @@
+/* align items */
+.align-items-center {
+  vertical-align: middle;
+}
+
+.align-items-center img {
+  vertical-align: middle;
+}
+
+/* justify content */
+.justify-content-space-between > .col {
+  text-align: center;
+}
+
+.justify-content-space-between > .col:first-child {
+  text-align: left;
+}
+
+.justify-content-space-between > .col:last-child {
+  text-align: right;
+}
+
+/* paddings */
+tr.py-2 td {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}

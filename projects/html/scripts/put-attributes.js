@@ -19,8 +19,22 @@ function setTableAttributes(el) {
   }
 }
 
+/**
+ *
+ * @param {HTMLImageElement} el
+ */
+function setImageAttributes(el) {
+  const width = el.getBoundingClientRect().width;
+
+  el.setAttribute('width', width);
+}
+
 function puAttributes() {
   const tables = Array.from(document.querySelectorAll('table') || []);
 
   tables.forEach(setTableAttributes);
+
+  const images = Array.from(document.querySelectorAll('img') || []);
+
+  images.forEach(setImageAttributes);
 }
