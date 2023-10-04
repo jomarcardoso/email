@@ -109,6 +109,8 @@ const PROPERTIES_TO_IGNORE = [
   'max-inline-size',
   'max-inline-start-size',
   'max-inline-end-size',
+  'height',
+  'width',
 ];
 
 /**

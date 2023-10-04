@@ -14,14 +14,14 @@
   }
 }
 
-.wrapper-fixed {
-  width: 600px;
-}
-
 .body {
   width: 100% !important;
   /* necessary for outlook */
   min-width: 100%;
+}
+
+.wrapper-fixed {
+  width: 600px;
 }
 
 .col,
